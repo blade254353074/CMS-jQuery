@@ -1,0 +1,24 @@
+<ul class="nav">
+    {{each menu}}
+    <li class="nav-item">
+        <a>
+            <span class="icon {{$value.icon}}"></span>
+            <span>{{$value.title}}</span>
+            <span class="symbol"></span>
+        </a>
+        {{if $value.list.length !== 0}}
+        <ul class="sub-nav">
+            {{each $value.list as item}}
+            <li class='sub-list'>
+                <a  class="sub-item"
+                    href="{{item.hash}}"
+                    data-root="{{item.root}}">
+                    <span>{{item.title}}</span>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </li>
+    {{/each}}
+</ul>
